@@ -1,0 +1,26 @@
+{
+	"name": "vivlong/phalapi-xsms",
+	"description": "PhalApi 2.x 扩展类库：支持AliyunSMS的推送扩展。",
+	"type": "library",
+	"keywords": [
+		"phalapi", "phalapi-xsms", "xsms"
+	],
+	"license": "MulanPSL-2.0",
+	"minimum-stability": "dev",
+	"homepage": "https://www.phalapi.net/",
+	"authors": [{
+		"name": "vivlong",
+		"email": "vivlonglz@gmail.com",
+		"homepage": "http://vivlong.github.io",
+		"role": "Developer"
+	}],
+	"require": {
+		"php": ">=7.0.0",
+		"alibabacloud/client": "9999999-dev"
+	},
+	"autoload": {
+		"psr-4": {
+			"PhalApi\\Xsms\\": "src"
+		}
+	}
+}
