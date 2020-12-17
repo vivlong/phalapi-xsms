@@ -6,7 +6,7 @@
 		"phalapi", "phalapi-xsms", "xsms"
 	],
 	"license": "MulanPSL-2.0",
-	"minimum-stability": "dev",
+	"minimum-stability": "stable",
 	"homepage": "https://www.phalapi.net/",
 	"authors": [{
 		"name": "vivlong",
@@ -16,7 +16,8 @@
 	}],
 	"require": {
 		"php": ">=7.0.0",
-		"alibabacloud/client": "9999999-dev"
+		"alibabacloud/client": "^1.5",
+		"alibabacloud/sdk": "^1.8"
 	},
 	"autoload": {
 		"psr-4": {
