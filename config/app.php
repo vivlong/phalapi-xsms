@@ -8,7 +8,7 @@ return [
         'aliyun' => [
             'accessKeyId'       => '<yourAccessKeyId>',
             'accessKeySecret'   => '<yourAccessKeySecret>',
-            'endpoint'          => 'cn-hangzhou',
+            'regionId'          => 'cn-hangzhou',
         ],
     ],
 ];

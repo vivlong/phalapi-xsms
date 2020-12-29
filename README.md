@@ -17,7 +17,7 @@ PhalApi 2.x 扩展类库：支持AliyunSMS的推送扩展。
         'aliyun' => array(
             'accessKeyId'       => '<yourAccessKeyId>',
             'accessKeySecret'   => '<yourAccessKeySecret>',
-            'endpoint'          => 'cn-hangzhou',
+            'regionId'          => 'cn-hangzhou',
         ),
     ),
 ```
