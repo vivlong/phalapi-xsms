@@ -34,5 +34,5 @@ $di->xSms = function() {
 ## 使用
 使用方式：
 ```php
-  \PhalApi\DI()->xSms->send();
+  \PhalApi\DI()->xSms->sendSms();
 ```  

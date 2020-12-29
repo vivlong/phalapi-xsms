@@ -21,6 +21,11 @@ class Aliyun
         if (null == $this->config) {
             $this->config = $di->config->get('app.Xsms.aliyun');
         }
+        if (!$this->config) {
+            $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, 'No engine config');
+
+            return false;
+        }
         AlibabaCloud:: accessKeyClient($this->config['accessKeyId'], $this->config['accessKeySecret'])
             ->regionId($this->config['regionId'])   // 设置客户端区域，使用该客户端且没有单独设置的请求都使用此设置
             ->timeout(6)                            // 超时10秒，使用该客户端且没有单独设置的请求都使用此设置
