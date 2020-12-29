@@ -22,7 +22,7 @@ class Aliyun
             $this->config = $di->config->get('app.Xsms.aliyun');
         }
         if (!$this->config) {
-            $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, 'No engine config');
+            $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, 'No engine config');
 
             return false;
         }
@@ -65,25 +65,25 @@ class Aliyun
                 $rs['msg'] = 'success';
                 $rs['data'] = $result->toArray();
                 if ($this->debug) {
-                    $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Response' => $response['body']]);
+                    $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Response' => $rs['data']]);
                 }
             } else {
                 $rs['code'] = -1;
                 $rs['msg'] = $result;
                 if ($this->debug) {
-                    $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Failed' => $result]);
+                    $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Failed' => $result]);
                 }
             }
         } catch (ClientException $e) {
-            $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ClientException' => $e->getErrorMessage()]);
+            $di->logger->error(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ClientException' => $e->getErrorMessage()]);
             $rs['code'] = -1;
             $rs['msg'] = $result;
-            $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Failed' => $result]);
+            $di->logger->error(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Failed' => $result]);
         } catch (ServerException $e) {
-            $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ServerException' => $e->getErrorMessage()]);
+            $di->logger->error(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ServerException' => $e->getErrorMessage()]);
             $rs['code'] = -1;
             $rs['msg'] = $result;
-            $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Failed' => $result]);
+            $di->logger->error(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Failed' => $result]);
         }
 
         return $rs;
@@ -211,12 +211,12 @@ class Aliyun
                     $mnsClient->sendRequest($deleteRequest);
                 }
             } catch (ClientException $e) {
-                $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ClientException' => $e->getErrorMessage()]);
+                $di->logger->error(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ClientException' => $e->getErrorMessage()]);
             } catch (ServerException $e) {
                 if (404 == $e->getCode()) {
                     ++$i;
                 }
-                $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ServerException' => $e->getErrorMessage()]);
+                $di->logger->error(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['ServerException' => $e->getErrorMessage()]);
             }
         } while ($i < 3);
     }

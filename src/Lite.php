@@ -54,7 +54,7 @@ class Lite
         $engine = __NAMESPACE__.'\\Engine\\'.ucfirst(strtolower($this->engine));
         $this->client = new $engine($config);
         if (!$this->client) {
-            $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['No engine class' => $this->engine]);
+            $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['No engine class' => $this->engine]);
 
             return false;
         }
