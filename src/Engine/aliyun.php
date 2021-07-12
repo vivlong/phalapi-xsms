@@ -1,6 +1,6 @@
 <?php
 
-namespace PhalApi\Xsms\Engine;
+namespace PhalApi\Xsms;
 
 use AlibabaCloud\Client\AlibabaCloud;
 use AlibabaCloud\Client\Exception\ClientException;

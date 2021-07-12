@@ -51,7 +51,7 @@ class Lite
     {
         $di = \PhalApi\DI();
         $this->engine = strtolower($engine);
-        $engine = __NAMESPACE__.'\\Engine\\'.ucfirst(strtolower($this->engine));
+        $engine = __NAMESPACE__.'\\'.ucfirst(strtolower($this->engine));
         $this->client = new $engine($config);
         if (!$this->client) {
             $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['No engine class' => $this->engine]);
