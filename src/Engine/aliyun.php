@@ -18,7 +18,7 @@ class Aliyun
         $di = \PhalApi\DI();
         $this->debug = $di->debug;
         $this->config = $config;
-        if (null == $this->config) {
+        if (is_null($this->config)) {
             $this->config = $di->config->get('app.Xsms.aliyun');
         }
         if (!$this->config) {

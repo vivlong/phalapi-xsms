@@ -12,13 +12,6 @@ class Lite
     private $client;
 
     /**
-     * 配置参数.
-     *
-     * @var type
-     */
-    private $config;
-
-    /**
      * 获取引擎.
      *
      * @var string
